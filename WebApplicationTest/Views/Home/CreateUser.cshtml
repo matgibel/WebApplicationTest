@@ -1,0 +1,42 @@
+﻿@model WebApplicationTest.Models.User
+
+@{
+    ViewData["Title"] = "CreateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    
+<h1>CreateUser</h1>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(u => u.FirstName, new {@class="form-control", placeholder = "First Name" })
+    </div>
+    <br />
+
+    <div>
+        @Html.TextBoxFor(u => u.LastName, new {@class="form-control", placeholder = "Last Name" })
+    </div>
+    <br />
+
+    <div>
+        @Html.TextBoxFor(u => u.Email, new {@class="form-control", placeholder = "First Name" })
+    </div>
+    <br />
+
+    <div>
+        @Html.TextBoxFor(u => u.Password, new {@class="form-control", placeholder = "Password" })
+    </div>
+    <br />
+
+    <div>
+        @Html.TextBoxFor(u => u.ConfirmPassword, new {@class="form-control", placeholder = "Confirm Password" })
+    </div>
+    <br />
+
+    <div>
+        @Html.EditorFor(u => u.CreationTime, new { htmlAttributes = new { @class = "datepicker" } })
+    </div>
+    
+    <button class="btn btn-success" type="submit">Create User</button>
+}
